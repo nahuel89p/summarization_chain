@@ -192,7 +192,7 @@ for key_to_keep in result_dict:
             
             
             qa_template = Prompt(template)
-            local_path =  '/Users/nahuelpatino/Downloads/upstage-llama-2-70b-instruct-v2.Q4_0.gguf' #chosen one
+            local_path =  '/Users/nahuelpatino/Downloads/upstage-llama-2-70b-instruct-v2.Q4_0.gguf' # Available in HuggingFace
                         
             prompt_helper = PromptHelper(context_window=4096)
             
@@ -262,7 +262,7 @@ for key_to_keep in result_dict:
         
         '''   
         
-        local_path =  '/Users/nahuelpatino/Downloads/nous-hermes-llama2-13b.gguf.q4_K_M.bin' #chosen one
+        local_path =  '/Users/nahuelpatino/Downloads/nous-hermes-llama2-13b.gguf.q4_K_M.bin' # Available in HuggingFace
         fullprompt = template.format( identifications = intel )
         
         llm = Llama(
@@ -605,7 +605,7 @@ for key_to_keep in result_dict:
         
         desc = videos.loc[ videos.Video_id == key_to_keep, 'Description'].values[0]
         chantitle = videos.loc[ videos.Video_id == key_to_keep, 'Channel_title'].values[0]
-        Channel_id = videos.loc[ videos.Video_id == key_to_keep, 'Channel_id'].values[0]
+        channel_id = videos.loc[ videos.Video_id == key_to_keep, 'Channel_id'].values[0]
         date = videos.loc[ videos.Video_id == key_to_keep, 'Date Uploaded'].values[0]
         url = videos.loc[ videos.Video_id == key_to_keep, 'URL'].values[0]
         ts = pd.to_datetime(str(date)) 
@@ -623,7 +623,7 @@ for key_to_keep in result_dict:
         'Summary':summary,
         'Description':desc,
          'Channel_name':chantitle,
-         'Channel_id':Channel_id,
+         'Channel_id':channel_id,
          'Date_Uploaded':d,
          'Url':url,
         'Twitted': 'No' }
